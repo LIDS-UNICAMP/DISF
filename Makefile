@@ -28,7 +28,8 @@ all: lib c python3 octave matlab
 
 lib: obj
 	$(eval ALL_OBJS := $(wildcard $(OBJ_DIR)/*.o))
-	ar csr $(LIB_DIR)/libdisf.a $(ALL_OBJS)
+	@mkdir -p $(LIB_DIR)
+	ar csr $(LIB_DIR)/libdisf.a $(ALL_OBJS) ;
 
 obj: \
 	$(OBJ_DIR)/Utils.o \
@@ -39,9 +40,11 @@ obj: \
 	$(OBJ_DIR)/DISF.o 
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INCLUDE_DIR)/%.h
+	@mkdir -p $(@D) 
 	$(CC) $(CFLAGS) -c $< -o $@ $(HEADER_INC) $(LIBS)
 
 c: lib
+	@mkdir -p $(BIN_DIR)
 	$(CC) $(CFLAGS) DISF_demo.c -o $(BIN_DIR)/DISF_demo $(HEADER_INC) $(LIB_INC) $(LIBS)
 
 octave: lib

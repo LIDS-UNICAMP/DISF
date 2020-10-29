@@ -1,0 +1,95 @@
+===============================================================================
+            Dynamic and Iterative Spanning Forest Framework (DISF)
+
+        Felipe C. Belém, Silvio J. F. Guimarães and Alexandre X. Falcão
+===============================================================================
+
+This is an implementation of the Dynamic and Iterative Spanning Forest (DISF)
+framework. Its strategy consists on oversampling the input image and, through
+the iterations, generates superpixels and removes those considered as irrelevant,
+by a certain criterion, until the desired quantity of superpixels is achieved.
+See http://viplab.icei.pucminas.br/projects/disf/ for more information 
+about this work.
+
+1) Papers & Citation:
+    This work was published at [1] and [2]... 
+        [1] - https://arxiv.org/abs/2007.04257
+        [2] - https://ieeexplore.ieee.org/document/9165122/
+    ...and if you're interested in using our code, we appreciate if you cite this work in your project. 
+        F. Belem, S. Guimaraes and A. X. Falcao, "Superpixel Segmentation using Dynamic and Iterative Spanning Forest," in IEEE Signal Processing Letters, doi: 10.1109/LSP.2020.3015433.
+
+2) Languages Supported:
+    C/C++ (Implementation), Python3 (Wrapper), Octave (Wrapper) and MATLAB (Wrapper)
+
+3) Compiling & Cleaning:
+    In order to compile the necessary files for executing in C, Python3, Octave or MATLAB environment, one can execute their respective rules...
+        make c
+        make python3
+        make octave
+        make matlab
+    ... or one of the following for compiling them all:
+        make    
+        make all
+    For removing all generated files from source, simply run:
+        make clean
+
+4) Running:
+    In this folder, there are three demo files, one for each language supported (i.e., C, 
+    Python3 and MATLAB/Octave). After compiling and assuring the generation of the 
+    necessary files, one can execute each demo within its own environment. As an example,
+    for a terminal located at this folder, one can run the following commands:
+        C: ./bin/DISF_demo
+        Python3: python3 DISF_demo.py
+        Octave: octave 
+                DISF_demo
+        MATLAB: matlab
+                DISF_demo
+
+5) Hardware & Requirements:
+    This code was implemented and evaluated in computers with the following 
+    specifications:
+        Acer Chromebook C720P
+        Order: Little-Endian
+        OS: GalliumOS v4.16.18 x86_64
+        CPU: 4x Dual-core Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz
+        Memory: 4GB RAM ; 32GB SSD
+
+        Gigabyte Technology H170M-D3H
+        Order: Little-Endian
+        OS: Ubuntu v4.15.0 x86_64
+        CPU: 8x Quad-core Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz
+        Memory: 64GB RAM ; 1TB SSD
+
+    Moreover, it was compiled and executed using the following programs:
+        GNU Make: v4.1
+        GNU GCC: v5.4.0 v7.5.0
+        Python: v3.5.2 v3.6.9 
+        Numpy: v1.12.1 v1.19.1
+        Octave: v4.2.2
+        MATLAB: R2019a v9.6.0.1150989 Update 4
+
+    Therefore, it is >>>NOT<<< guaranteed that this code will compile/execute properly in any
+    other operational system (e.g., Windows and MacOS) or programs (e.g., MinGW and Clang).
+
+6) Optional Libraries:
+    In each demo, it was considered a library for manipulating images, which are not 
+    mandatory. Thus, one can alter such to its preferred one, but maintaining the conversion
+    to the mandatory object types (e.g., Int32 Mex Array, Int32 Numpy Array and Graph*).
+    The optional libraries used at each demo are presented below:
+        Octave Image Package: v2.12.0
+        Matplotlib: v2.0.2 v3.2.1
+        Python Imaging Library (PIL): v5.1.0 v5.3.0
+        STB Image: v2.23
+
+7) License:
+    This code is licensed under Open Software License ("OSL") v.3.0. Please, see LICENSE for
+    more details.
+
+8) Acknowledgments
+    This work was developed during Felipe's M.Sc. and Ph.D. studies at the University of Campinas (UNICAMP), in São Paulo, Brazil, with the cooperation of the Pontifical Catholic University of Minas Gerais (PUC-MG), in Minas Gerais, Brazil. Moreover, it was financially supported by CNPq, FAPESP, FAPEMIG and CAPES --- all brazilian research funding agencies.
+
+9) Contact:
+    Please, feel free to contact the authors for any unexpected behavior you might face (e.g., bugs):
+        Felipe C. Belém: felipe.belem@ic.unicamp.br
+        Silvio J. F. Guimarães: sjamil@pucminas.br
+        Alexandre X. Falcão: afalcao@ic.unicamp.br

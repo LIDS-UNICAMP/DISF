@@ -1,6 +1,3 @@
-import sys
-sys.path.append("./python3/");
-
 from disf import DISF_Superpixels
 from PIL import Image
 import matplotlib.pyplot as plt

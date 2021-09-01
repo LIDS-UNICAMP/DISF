@@ -55,8 +55,7 @@ matlab: lib
 	matlab -nodisplay -nojvm -nosplash -r "mex $(MEX_DIR)/DISF_mex.c -I$(INCLUDE_DIR) -L$(LIB_DIR) -O -ldisf -lgomp -outdir $(MEX_DIR) -output DISF_Superpixels.mex; exit;" ;
 
 python3: lib
-	python3 python3/setup.py build_ext -b $(PYTHON3_DIR);
-	python3 python3/setup.py clean;
+	python3 python3/setup.py install;
 
 clean:
 	rm -rf $(OBJ_DIR)/* ;
